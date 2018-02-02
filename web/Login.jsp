@@ -12,10 +12,10 @@
         <title>Login</title>
     </head>
     <body>
-        <form action=""method="POST">
+        <form action="Login" method="POST">
             <table align="center">
                 <tr>
-                    <th align="right">UserName:</th>
+                    <th align="right">Username:</th>
                     <td><input type="text" name="txtusername"></td>
                 </tr>
                 <tr>

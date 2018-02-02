@@ -18,7 +18,7 @@ import java.sql.*;
  *
  * @author Krisz
  */
-@WebServlet(name = "Controller", urlPatterns = {"/Controller"})
+@WebServlet("/Login")
 public class Controller extends HttpServlet {
 
    
@@ -34,7 +34,7 @@ public class Controller extends HttpServlet {
                if(username!=null)
                {
                    Class.forName("com.mysql.jdbc.Driver").newInstance();
-                   Connection conn = DriverManager.getConnection("jdbc:mysql//loclahost:3306/admin","root","admin");
+                   Connection conn = DriverManager.getConnection("jdbc:mysql//localhost:3306/namedb","root","admin");
                    String Query="Select * from tableLogin where username=? and password=?";
                    PreparedStatement psm = conn.prepareStatement(Query);
                    psm.setString(1, username);
@@ -56,8 +56,6 @@ public class Controller extends HttpServlet {
            }
         }
     }
-
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

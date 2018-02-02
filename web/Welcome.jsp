@@ -12,6 +12,6 @@
         <title>Welcome</title>
     </head>
     <body>
-        <h1>WELCOME!</h1>
+        <h1>WELCOME! ${username}</h1>
     </body>
 </html>
