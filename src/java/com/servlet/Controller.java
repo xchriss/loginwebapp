@@ -46,7 +46,7 @@ public class Controller extends HttpServlet {
                    }
                    else 
                    {
-                       out.println("A név és a jelszó nincs az adatbázisban!");
+                       out.println("Acces Denied!");
                    }
                }
            }
