@@ -34,14 +34,15 @@ public class Controller extends HttpServlet {
                if(username!=null)
                {
                    Class.forName("com.mysql.jdbc.Driver").newInstance();
-                   Connection conn = DriverManager.getConnection("jdbc:mysql//localhost:3306/namedb","root","admin");
+                   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/namedb","root","admin");
                    String Query="Select * from tableLogin where username=? and password=?";
                    PreparedStatement psm = conn.prepareStatement(Query);
                    psm.setString(1, username);
-                   psm.setString(1, password);
+                   psm.setString(2, password);
                    ResultSet rs = psm.executeQuery();
                    if(rs.next())
                    {
+                       //out.println("OK");
                        response.sendRedirect("Welcome.jsp");
                    }
                    else 
